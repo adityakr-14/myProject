@@ -17,8 +17,8 @@ export default function Wishlist({ likedMovies }) {
         <p>My Wishlist</p>
       </div>
       {message && message.map((movie) => (
-      <div className="container max-w-4xl mx-auto pt-6">
-      <div className="px-3" key={movie.id}>
+      <div className="container max-w-4xl mx-auto pt-6" key={movie.id}>
+      <div className="px-3">
         <Image src={movie.image} width={1000} height={600} className="rounded-md" alt={movie.title} />
         <h1 className="font-bold text-xl my-2">{movie.title}</h1>
         <p className="text-gray-600 text-sm mt-4">{movie.description}</p>
