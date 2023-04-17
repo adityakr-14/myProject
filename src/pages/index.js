@@ -4,10 +4,16 @@ import axios from 'axios';
 import Navbar from '../components/Navbar';
 import MovieList from '../components/MovieList';
 import Wishlist from './WishList';
+import { Message_data } from "../../context/context";
+import { useContext } from "react";
+import { useRouter } from "next/router";
 
 export default function TopMovies({ movies }) {
   const [searchResults, setSearchResults] = useState([]);
   const [likedMovies, setLikedMovies] = useState([]);
+  const { message, setMessage } = useContext(Message_data);
+
+  var router = useRouter();
 
   const handleSearchSubmit = (searchTerm) => {
     const results = movies.filter((movie) =>
@@ -19,6 +25,7 @@ export default function TopMovies({ movies }) {
   const handleLikeClick = (movie) => {
     if (!likedMovies.includes(movie)) {
       setLikedMovies([...likedMovies, movie]);
+      setMessage([...likedMovies, movie]);
     }
   };
 

@@ -3,7 +3,6 @@ const Layout = ({ children}) => {
     
     return(
         <>
-            <Meta />
             <main>
                 {children}
             </main>
