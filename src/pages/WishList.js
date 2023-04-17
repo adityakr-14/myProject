@@ -20,10 +20,10 @@ export default function Wishlist({ likedMovies }) {
       <div className="container max-w-4xl mx-auto pt-6" key={movie.id}>
       <div className="px-3">
         <Image src={movie.image} width={1000} height={600} className="rounded-md" alt={movie.title} />
-        <h1 className="font-bold text-xl my-2">{movie.title}</h1>
-        <p className="text-gray-600 text-sm mt-4">{movie.description}</p>
-        <p className="text-gray-600 text-sm">Release Date: <span className="font-bold">{movie.year}</span></p>
-        <button className="text-gray-600 text-sm" onClick={() => window.open(movie.trailer, '_blank')}>Play: <span className="font-bold">{movie.trailer}</span></button>
+        <h1 className="font-bold text-xl my-2" key={movie.id}>{movie.title}</h1>
+        <p className="text-gray-600 text-sm mt-4" key={movie.id}>{movie.description}</p>
+        <p className="text-gray-600 text-sm" key={movie.id}>Release Date: <span className="font-bold">{movie.year}</span></p>
+        <button className="text-gray-600 text-sm" onClick={() => window.open(movie.trailer, '_blank')} key={movie.id} >Play: <span className="font-bold">{movie.trailer}</span></button>
       </div>
     </div>
     ))}
